@@ -14176,9 +14176,11 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Random forest is one of the ensemble methods. Instead of using just one, best possible model, we creating multiple "weak learners" and summarize their results to getting one "strong learner".</p>
-<p>Random forest uses decision trees as a "weak learners" and average their predictions to get "strong learner". Each tree is train using bootstrap sample. Main difference, compare to training of individual decision tree, is that nodes are not splitted using best split among all features but only random subset of features.</p>
-<p>"As a result of this randomness, the bias of the forest usually slightly increases (with respect to the bias of a single non-random tree) but, due to averaging, its variance also decreases, usually more than compensating for the increase in bias, hence yielding an overall better model." [<a href="http://scikit-learn.org/stable/modules/ensemble.html#random-forests">http://scikit-learn.org/stable/modules/ensemble.html#random-forests</a>]</p>
+<p>Random forest is one of the ensemble methods. In this method instead of creating one perfect model we create multiple non ideal. This kind of learners/models are called "weak". To create "strong" one we combine predictions of "weak" ones.</p>
+<p>Random forest uses decision trees as a "weak" learners and average their predictions. Each tree is train using randomly chosen samples. Each individual sample may be drawn multiple times. Main difference, compare to training of individual decision tree, is that nodes are not splitted using best split among all features but only random subset of features.</p>
+<p>This way of creating "week" models cause, that individual trees perform slightly worse than single decision tree trained on all features, but due to averaging predictions from entire forest we getting better results then from single tree.</p>
+<p>Based on sklearn documentation [<a href="http://scikit-learn.org/stable/modules/ensemble.html#random-forests">http://scikit-learn.org/stable/modules/ensemble.html#random-forests</a>]
+and wikipedia [<a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating">https://en.wikipedia.org/wiki/Bootstrap_aggregating</a>]</p>
 
 </div>
 </div>
